@@ -1,9 +1,7 @@
-import numpy as np
+
 
 A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-def matrix__mul_np(m1, m2):
-    return np.matmul(m1, m2)
 
 #Given two square matrices
 def matrix_mul(m1, m2):
@@ -19,8 +17,8 @@ def matrix_mul(m1, m2):
 
             m[i][j] = result
 
-    return np.array(m).astype(float)
+    return m
 
-print(matrix__mul_np(A, A))
+
 
 print(matrix_mul(A, A))
