@@ -1,11 +1,11 @@
 File,Language,Size,Range,Type,PKG_Energy,RAM_Energy,Cache Misses,Time
-perf_output4.txt,python,10,10,int,2.37,0.28,60051,0.025411792
-perf_output7.txt,python,10,10,int,2.00,0.23,47614,0.021618588
-perf_output8.txt,python,10,10,int,2.07,0.24,49755,0.021656266
-perf_output3.txt,python,10,10,int,1.99,0.23,52274,0.021610928
-perf_output2.txt,python,10,10,int,2.02,0.23,55310,0.021798224
-perf_output10.txt,python,10,10,int,1.99,0.23,50924,0.021608846
-perf_output6.txt,python,10,10,int,2.02,0.23,49962,0.021594864
-perf_output1.txt,python,10,10,int,2.14,0.25,86832,0.022889149
-perf_output9.txt,python,10,10,int,2.01,0.23,48500,0.021677806
-perf_output5.txt,python,10,10,int,2.04,0.24,53546,0.021775331
+perf_output2.txt,python,20,832,1,7.24,0.18,18,0.121148359
+perf_output5.txt,python,32,377,3,4.36,0.13,11,0.092882929
+perf_output6.txt,python,41,390,2,4.33,0.14,14,0.095588527
+perf_output4.txt,python,64,587,1,6.22,0.19,18,0.118491928
+perf_output8.txt,python,27,819,1,4.15,0.12,11,0.097421134
+perf_output1.txt,python,68,763,3,7.44,0.19,19,0.122936518
+perf_output9.txt,python,49,154,1,3.50,0.12,11,0.089333112
+perf_output7.txt,python,29,814,3,5.25,0.18,16,0.109080293
+perf_output3.txt,python,28,497,2,7.37,0.19,19,0.124109387
+perf_output10.txt,python,49,444,2,5.36,0.19,16,0.109006268

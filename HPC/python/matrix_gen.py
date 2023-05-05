@@ -36,23 +36,23 @@ def generate_matrix(m_size, m_range, m_type):
 
             matrix[row][column] = generate_value(m_range, m_type)
 
-    print(matrix)
     return matrix
 
 def generate_value(m_range, m_type):
 
     # Positive integers (N)
-    if m_type == "int" or m_type == None:
+    if m_type == "int" or m_type == None or m_type == 1 or m_type == "1":
         value = random.randint(0, m_range)
 
     # Negative integers (Z)
-    if m_type == "neg":
+    if m_type == "neg" or m_type == 2 or m_type == "2":
         value = random.randrange(-m_range/2, m_range/2)
 
     # Floats (R)
-    if m_type == "float":
+    if m_type == "float" or m_type == 3 or m_type == "3":
         value = random.uniform(-m_range/2, m_range/2)
    
     return value
 
-generate_matrix(m_size, m_range, m_type)
+if __name__ == "__main__": 
+    generate_matrix(m_size, m_range, m_type)
