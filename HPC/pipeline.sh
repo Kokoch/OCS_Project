@@ -31,3 +31,4 @@ cd ./python/outputs/
 
 # Moves to the following directory to run the dataset composition
 python to_csv.py
+rm perf_output*.txt
