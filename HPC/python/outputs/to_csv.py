@@ -50,7 +50,17 @@ for filename in file_list:
 # Add a naming for the csv
 
 # either use 'a' or 'w' as writing mode
-with open(f'perf_output_all{type}{size}.csv', 'a', newline='') as f:
-    writer = csv.DictWriter(f, fieldnames=['File', 'Language', 'Size', 'Range', 'Type', 'PKG_Energy', 'RAM_Energy', 'Cache Misses', 'Time'])
-    writer.writeheader()
-    writer.writerows(all_results)
+# If the CSV file does not exist yet, will create it and write the headers and rows in it.
+csv_path = "perf_output_all.csv"
+
+if os.path.exists(csv_path):
+    print("here")
+    with open(csv_path, 'a', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=['File', 'Language', 'Size', 'Range', 'Type', 'PKG_Energy', 'RAM_Energy', 'Cache Misses', 'Time'])
+        writer.writerows(all_results)
+else:
+    # When the CSV file does not exist yet
+    with open(csv_path, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=['File', 'Language', 'Size', 'Range', 'Type', 'PKG_Energy', 'RAM_Energy', 'Cache Misses', 'Time'])
+        writer.writeheader()
+        writer.writerows(all_results)
