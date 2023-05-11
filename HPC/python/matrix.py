@@ -29,10 +29,23 @@ else:
 
 def generate_matrix(m_size, m_range, m_type):
 
-    matrix = [ [ 0 for i in range(m_size) ] for j in range(m_size) ]
+    #Add selection of size between 1 and 4:
+    if m_size == 1:
+        size = 10
+    elif m_size == 2:
+        size = 100
+    elif m_size == 3:
+        size = 1000
+    elif m_size == 4:
+        size = 10000
+    else:
+        size = m_size
+        
+    # modified variable m_size to size here.
+    matrix = [ [ 0 for i in range(size) ] for j in range(size) ]
 
-    for row in range(m_size):
-        for column in range(m_size):
+    for row in range(size):
+        for column in range(size):
 
             matrix[row][column] = generate_value(m_range, m_type)
 
