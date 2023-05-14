@@ -10,11 +10,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
-from keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam
 from keras.losses import Huber
 
 # Path to the dataset file
-dataset_path = "/python/outputs/perf_output_all.csv"
+dataset_path = "python/outputs/perf_output_all.csv"
 
 # Can be used to replace the dataset by arguments.
 # import sys
