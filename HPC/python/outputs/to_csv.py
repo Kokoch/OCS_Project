@@ -3,8 +3,8 @@ import csv
 import sys
 
 # Add args in order to name the csv. If find how to append not necessary
-type= list(sys.argv[1])
-size= list(sys.argv[2])
+type = list(sys.argv[1])
+size = list(sys.argv[2])
 
 # Récupérer la liste des fichiers perf_output*.txt dans le répertoire actuel
 file_list = [filename for filename in os.listdir() if filename.startswith('perf_output') and filename.endswith('.txt')]
