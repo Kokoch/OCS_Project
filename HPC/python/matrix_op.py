@@ -1,7 +1,9 @@
 import sys
+import ast
 
+matrix_str= sys.argv[1]
+matrix = ast.literal_eval(matrix_str)
 
-matrix= list(sys.argv[1])
 
 
 #Given two square matrices
