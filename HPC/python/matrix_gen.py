@@ -41,13 +41,15 @@ def generate_matrix(m_size, m_range, m_type):
 
 def generate_value(m_range, m_type):
 
+    #print(m_range, m_type, type(m_range), type(m_type))
+
     # Positive integers (N)
     if m_type == "int" or m_type == None:
         value = random.randint(0, m_range)
 
     # Negative integers (Z)
-    if m_type == "neg":
-        value = random.randrange(-m_range/2, m_range/2)
+    if m_type == "neg" or m_type == 2 or m_type == "2":
+        value = random.randrange(-int(m_range/2), int(m_range/2))
 
     # Floats (R)
     if m_type == "float":
@@ -55,4 +57,7 @@ def generate_value(m_range, m_type):
    
     return value
 
-generate_matrix(m_size, m_range, m_type)
+if __name__ == "__main__":
+   
+    m = generate_matrix(m_size, m_range, m_type)
+    sys.stdout.write(f"{m}")

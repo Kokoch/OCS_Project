@@ -1,8 +1,12 @@
 import sys
+import ast
 
-A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-m_size = int(sys.argv[1])
-#print("Matrix received in MM:", m_size)
+matrix_str= sys.argv[1]
+matrix = ast.literal_eval(matrix_str)
+
+
+
+>>>>>>> b0204bd174e8b933c0ca73b11bcb55880fbdb0e4
 
 #Given two square matrices
 def matrix_mul(m1, m2):
