@@ -3,8 +3,8 @@ import csv
 import sys
 
 # Add args in order to name the csv. If find how to append not necessary
-type = list(sys.argv[1])
-size = list(sys.argv[2])
+type= list(sys.argv[1])
+size= list(sys.argv[2])
 
 # Récupérer la liste des fichiers perf_output*.txt dans le répertoire actuel
 file_list = [filename for filename in os.listdir() if filename.startswith('perf_output') and filename.endswith('.txt')]
@@ -54,7 +54,6 @@ for filename in file_list:
 csv_path = "perf_output_all.csv"
 
 if os.path.exists(csv_path):
-    print("here")
     with open(csv_path, 'a', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=['File', 'Language', 'Size', 'Range', 'Type', 'PKG_Energy', 'RAM_Energy', 'Cache Misses', 'Time'])
         writer.writerows(all_results)

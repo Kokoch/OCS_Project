@@ -29,32 +29,19 @@ else:
 
 def generate_matrix(m_size, m_range, m_type):
 
-    #Add selection of size between 1 and 4:
-    if m_size == 1:
-        size = 10
-    elif m_size == 2:
-        size = 100
-    elif m_size == 3:
-        size = 1000
-    elif m_size == 4:
-        size = 10000
-    else:
-        size = m_size
-        
-    # modified variable m_size to size here.
-    matrix = [ [ 0 for i in range(size) ] for j in range(size) ]
+    matrix = [ [ 0 for i in range(m_size) ] for j in range(m_size) ]
 
-    for row in range(size):
-        for column in range(size):
+    for row in range(m_size):
+        for column in range(m_size):
 
             matrix[row][column] = generate_value(m_range, m_type)
 
-    print(matrix)
+    #print(matrix)
     return matrix
 
 def generate_value(m_range, m_type):
 
-    print(m_range, m_type, type(m_range), type(m_type))
+    #print(m_range, m_type, type(m_range), type(m_type))
 
     # Positive integers (N)
     if m_type == "int" or m_type == None or m_type == 1 or m_type == "1":
@@ -84,7 +71,7 @@ def matrix_mul(m1, m2):
 
             m[i][j] = result
 
-    print("Output MM matrix:", m)
+    #print("Output MM matrix:", m)
     return m
 
 matrix_A = generate_matrix(m_size, m_range, m_type)

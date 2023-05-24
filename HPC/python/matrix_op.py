@@ -1,8 +1,8 @@
 import sys
 
-
-matrix= list(sys.argv[1])
-
+A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+m_size = int(sys.argv[1])
+#print("Matrix received in MM:", m_size)
 
 #Given two square matrices
 def matrix_mul(m1, m2):
@@ -20,4 +20,4 @@ def matrix_mul(m1, m2):
 
     return m
 
-matrix_mul(matrix,matrix)
+matrix_mul(A, A)

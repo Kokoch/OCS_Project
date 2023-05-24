@@ -29,46 +29,30 @@ else:
 
 def generate_matrix(m_size, m_range, m_type):
 
-    #Add selection of size between 1 and 4:
-    if m_size == 1:
-        size = 10
-    elif m_size == 2:
-        size = 100
-    elif m_size == 3:
-        size = 1000
-    elif m_size == 4:
-        size = 10000
-    else:
-        size = m_size
-        
+    matrix = [ [ 0 for i in range(m_size) ] for j in range(m_size) ]
 
-    matrix = [ [ 0 for i in range(size) ] for j in range(size) ]
-
-    for row in range(size):
-        for column in range(size):
+    for row in range(m_size):
+        for column in range(m_size):
 
             matrix[row][column] = generate_value(m_range, m_type)
 
-    print(matrix)
+    #print(matrix)
     return matrix
 
 def generate_value(m_range, m_type):
 
-    print(m_range, m_type, type(m_range), type(m_type))
-
     # Positive integers (N)
-    if m_type == "int" or m_type == None or m_type == 1 or m_type == "1":
+    if m_type == "int" or m_type == None:
         value = random.randint(0, m_range)
 
     # Negative integers (Z)
-    if m_type == "neg" or m_type == 2 or m_type == "2":
+    if m_type == "neg":
         value = random.randrange(-m_range/2, m_range/2)
 
     # Floats (R)
-    if m_type == "float" or m_type == 3 or m_type == "3":
+    if m_type == "float":
         value = random.uniform(-m_range/2, m_range/2)
    
     return value
 
-if __name__ == "__main__":
-    generate_matrix(m_size, m_range, m_type)
+generate_matrix(m_size, m_range, m_type)
