@@ -4,13 +4,13 @@ import random
 # For command line input. The three parameters must be in the order "size", "range", "type". Size and Range are integer values. Type can only be "int", "neg", "float"
 if True:
     m_size = int(sys.argv[1])
-    print("Size of the matrix to be generated:", m_size)
+    #print("Size of the matrix to be generated:", m_size)
 
     m_range = int(sys.argv[2])
-    print("Range of the matrix to be generated:", m_range)
+    #print("Range of the matrix to be generated:", m_range)
 
     m_type = str(sys.argv[3])
-    print("Type of the values contained in the matrix to be generated:", m_type)
+    #print("Type of the values contained in the matrix to be generated:", m_type)
     
 else:
 
@@ -44,16 +44,16 @@ def generate_value(m_range, m_type):
     #print(m_range, m_type, type(m_range), type(m_type))
 
     # Positive integers (N)
-    if m_type == "int" or m_type == None:
+    if m_type == "int" or m_type == None or m_type == "1" or m_type == 1:
         value = random.randint(0, m_range)
 
     # Negative integers (Z)
-    if m_type == "neg" or m_type == 2 or m_type == "2":
+    if m_type == "neg" or m_type == 2 or m_type == "2" or m_type == 2:
         value = random.randrange(-int(m_range/2), int(m_range/2))
         value = round(value, 2)
 
     # Floats (R)
-    if m_type == "float":
+    if m_type == "float" or m_type == "3" or m_type == 3:
         value = random.uniform(-m_range/2, m_range/2)
         value = round(value, 2)
    
