@@ -50,10 +50,12 @@ def generate_value(m_range, m_type):
     # Negative integers (Z)
     if m_type == "neg" or m_type == 2 or m_type == "2":
         value = random.randrange(-int(m_range/2), int(m_range/2))
+        value = round(value, 2)
 
     # Floats (R)
     if m_type == "float":
         value = random.uniform(-m_range/2, m_range/2)
+        value = round(value, 2)
    
     return value
 
