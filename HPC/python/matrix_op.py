@@ -6,7 +6,6 @@ matrix = ast.literal_eval(matrix_str)
 
 
 
->>>>>>> b0204bd174e8b933c0ca73b11bcb55880fbdb0e4
 
 #Given two square matrices
 def matrix_mul(m1, m2):
@@ -24,4 +23,4 @@ def matrix_mul(m1, m2):
 
     return m
 
-matrix_mul(A, A)
+matrix_mul(matrix, matrix)
