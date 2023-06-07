@@ -1,5 +1,7 @@
 # OCS_Project
-This is the source code for the project of Elliot, Xavier and Gabriel. (In the context of OCS course)
+This repository contains the report and all the code related to the group project made by Gabriel SPADONI, Elliot KOCH and Xavier-Robert FRANÇOIS under the supervision of Emmanuel Kieffer and Tobias FISCHBACH for the course "Optimisation for Computer Science" of the second semester of the Master in Computer Science at the University of Luxembourg.
+
+## HPC folder contains a more advanced readme.txt
 
 Files matrix_op.c and matrix_op.cpp are still under work. That is the code taken from examples to try to understand how to make it work.
 

@@ -2,6 +2,10 @@ import os
 import csv
 import sys
 
+# Add args in order to name the csv. If find how to append not necessary
+type= list(sys.argv[1])
+size= list(sys.argv[2])
+
 # Récupérer la liste des fichiers perf_output*.txt dans le répertoire actuel
 file_list = [filename for filename in os.listdir() if filename.startswith('perf_output') and filename.endswith('.txt')]
 
@@ -43,7 +47,19 @@ for filename in file_list:
         all_results.append({'File': filename, 'Language': language, 'Size': m_size, 'Range': m_range, 'Type': m_type, 'PKG_Energy': pkg_energy, 'RAM_Energy': ram_energy, 'Cache Misses': cache_misses, 'Time': duration})
 
 # Écrire les résultats dans un fichier CSV
-with open('perf_output_all.csv', 'w', newline='') as f:
-    writer = csv.DictWriter(f, fieldnames=['File', 'Language', 'Size', 'Range', 'Type', 'PKG_Energy', 'RAM_Energy', 'Cache Misses', 'Time'])
-    writer.writeheader()
-    writer.writerows(all_results)
+# Add a naming for the csv
+
+# either use 'a' or 'w' as writing mode
+# If the CSV file does not exist yet, will create it and write the headers and rows in it.
+csv_path = "perf_output_all.csv"
+
+if os.path.exists(csv_path):
+    with open(csv_path, 'a', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=['File', 'Language', 'Size', 'Range', 'Type', 'PKG_Energy', 'RAM_Energy', 'Cache Misses', 'Time'])
+        writer.writerows(all_results)
+else:
+    # When the CSV file does not exist yet
+    with open(csv_path, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=['File', 'Language', 'Size', 'Range', 'Type', 'PKG_Energy', 'RAM_Energy', 'Cache Misses', 'Time'])
+        writer.writeheader()
+        writer.writerows(all_results)

@@ -1,0 +1,16 @@
+# started on Thu May 11 13:02:44 2023
+
+
+ Performance counter stats for 'system wide':
+
+              3,07 Joules power/energy-pkg/                                           
+              0,09 Joules power/energy-ram/                                           
+         7 319 922        cpu/cache-misses/                                           
+
+       0,104495084 seconds time elapsed
+
+
+Size:3:
+Range:70:
+Type:2:
+Language:python:

@@ -36,12 +36,12 @@ def generate_matrix(m_size, m_range, m_type):
 
             matrix[row][column] = generate_value(m_range, m_type)
 
-    print(matrix)
+    #print(matrix)
     return matrix
 
 def generate_value(m_range, m_type):
 
-    print(m_range, m_type, type(m_range), type(m_type))
+    #print(m_range, m_type, type(m_range), type(m_type))
 
     # Positive integers (N)
     if m_type == "int" or m_type == None or m_type == 1 or m_type == "1":
@@ -71,7 +71,7 @@ def matrix_mul(m1, m2):
 
             m[i][j] = result
 
-    print("Output MM matrix:", m)
+    #print("Output MM matrix:", m)
     return m
 
 matrix_A = generate_matrix(m_size, m_range, m_type)
