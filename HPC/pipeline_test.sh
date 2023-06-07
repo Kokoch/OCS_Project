@@ -23,12 +23,12 @@ language=python;
 # For each type (int, neg, float)
 for t in {1..3};
 do  
-    for s in {1..3};
+    for s in {1..2};
     do
         for i in {1..10}; 
         do  
             # Chooses a random range of values
-            range=$((2 + $RANDOM % 1000));
+            range=$((1 + $RANDOM % 1000));
     
             #perf stat -a -e "power/energy-pkg/","power/energy-ram/","cpu/cache-misses/" -o ./python/outputs/perf_output${i}.txt  python ./python/matrix.py ${s} $range ${t}
             matrix=$(python ./python/matrix_gen.py ${s} $range ${t} | sed 's/[[:space:]]//g')
@@ -38,10 +38,10 @@ do
         done
         # Adds the parameter in the perf output files
         cd ./python/outputs/
-        python data_write.py $s $range $t $language
+        #python data_write.py $size $range $type 
 
         # Moves to the following directory to run the dataset composition
-        python to_csv.py ${t} $s
+        python3 to_csv.py ${t} $size
         rm perf_output*.txt
 
         cd ..

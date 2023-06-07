@@ -40,7 +40,7 @@ do
         do  
             # This gives S, which represents the learning rate, a value of 10, 100, 1000 or 10000.
             learning_rate=$((10**$i))
-	        filenumber=$(($filenumber+1))
+	    filenumber=$(($filenumber+1))
             perf stat -a -e "power/energy-pkg/","power/energy-ram/","cpu/cache-misses/" -o ./NNergy/outputs/perf_output${filenumber}.txt  python3 ocs_project_NN_optimization2.py ${epochs} ${batch_size} ${learning_rate} ${filenumber}
             python3 data_write_NN.py ${epochs} ${batch_size} ${learning_rate} ${filenumber} 
             
@@ -53,7 +53,7 @@ do
         # Moves to the following directory to run the dataset composition
         python3 NN_to_csv.py
         rm perf_output*.txt
-	    rm NN_loss*
+	rm NN_loss*
         cd ..
         cd ..
     done

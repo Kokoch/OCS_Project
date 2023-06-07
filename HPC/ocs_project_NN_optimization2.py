@@ -9,10 +9,10 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-from keras.models import Sequential
-from keras.layers import Dense, Dropout
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
-from keras.losses import Huber
+from tensorflow.keras.losses import Huber
 
 # Path to the dataset file
 dataset_path = "NN_dataset.csv"
@@ -21,8 +21,9 @@ dataset_path = "NN_dataset.csv"
 epochs_arg = int(sys.argv[1])
 batch_size_arg = int(sys.argv[2])
 learning_rate_arg = int(sys.argv[3]) 
-learning_ratge_arg = 1/learning_rate_arg
+learning_rate_arg = 1/learning_rate_arg
 filenumber = int(sys.argv[4]) 
+print(learning_rate_arg)
 
 """ Pre-Processing """ # MIGHT CONSIDER TAKING THIS OUT OF THE FILE SO THAT PERF DOES NOT CONSIDER THE PREPROCESSING
 
@@ -66,9 +67,11 @@ sample_df = shuffled_df.sample(n=1000)
 
 # Extract the input features from the sample dataset
 X_sample = sample_df.iloc[:, :-1].values.astype('float32')
+print(X_sample)
 
 # Make predictions using the model
 y_pred = model.predict(X_sample)
+print("Prediction:", y_pred)
 errors = np.abs(y_pred - sample_df.iloc[:, -1].values.reshape(-1,1))
 total_error_margin = 0
 for j in range(len(sample_df)):
